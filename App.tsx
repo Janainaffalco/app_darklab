@@ -9,19 +9,19 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => (
-  <WebView source={{ uri: 'https://darklabsuplementos.com.br' }} style={styles.webview} />
+  <WebView source={{ uri: 'https://v0-dark-lab-website.vercel.app' }} style={styles.webview} />
 );
 
 const CategoriaScreen = () => (
-  <WebView source={{ uri: 'https://darklabsuplementos.com.br/produtos/' }} style={styles.webview} />
+  <WebView source={{ uri: 'https://v0-dark-lab-website.vercel.app/products' }} style={styles.webview} />
 );
 
 const BlogScreen = () => (
-  <WebView source={{ uri: 'https://blog.darklabsuplementos.com.br/' }} style={styles.webview} />
+  <WebView source={{ uri: 'https://v0-dark-lab-website.vercel.app/#benefits' }} style={styles.webview} />
 );
 
 const KitsScreen = () => (
-  <WebView source={{ uri: 'https://darklabsuplementos.com.br/kits' }} style={styles.webview} />
+  <WebView source={{ uri: 'https://v0-dark-lab-website.vercel.app/#contact' }} style={styles.webview} />
 );
 
 
@@ -36,10 +36,10 @@ const tabBarIcon = (routeName: string, color: string, size: number) => {
     case 'Categoria':
       iconName = 'list-outline';
       break;
-    case 'Blog':
+    case 'Benefícios':
       iconName = 'document-text-outline';
       break;
-    case 'Kits':
+    case 'Contato':
       iconName = 'cube-outline';
       break;
   }
@@ -56,15 +56,15 @@ const App: React.FC = () => {
           screenOptions={({ route }) => ({
             headerShown: false,
             tabBarStyle: { backgroundColor: '#000' },
-            tabBarActiveTintColor: '#ee1f25',
+            tabBarActiveTintColor: '#9336e8',
             tabBarInactiveTintColor: '#ccc',
             tabBarIcon: ({ color, size }) => tabBarIcon(route.name, color, size),
           })}
         >
           <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Categoria" component={CategoriaScreen} />
-          <Tab.Screen name="Blog" component={BlogScreen} />
-          <Tab.Screen name="Kits" component={KitsScreen} />
+          <Tab.Screen name="Benefícios" component={BlogScreen} />
+          <Tab.Screen name="Contato" component={KitsScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaView>
